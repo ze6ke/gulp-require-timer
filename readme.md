@@ -39,7 +39,8 @@ Require caches each file, so these two blocks of code will have similar performa
     requiret.require('gulp')
 
 
-    //calling it 3 times only executes it once, so there's no performance penalty to this.
+    //calling it 3 times only executes it once, so there's no 
+    //performance penalty to this.
     requiret.require('gulp')
     requiret.require('gulp')
     requiret.require('gulp')
