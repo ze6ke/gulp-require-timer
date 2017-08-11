@@ -84,7 +84,7 @@ It's much better to put the require statements inside of the tasks whenever poss
 Because require optimizes multiple calls, there's no need to try to prevent 
 require from being called repeatedly for one library.  This structure means 
 that you don't have to wait for libraries 2 and 3 to load in order to use 
-library 1.  As an added benefit, if you do end need to execute all three tasks,
+library 1.  As an added benefit, if you do end up needing to execute all three tasks,
 this structure allows gulp to run things in parallel, which isn't possible for
 blocks of require statements at the top of your gulpfile.
 
