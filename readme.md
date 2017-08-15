@@ -1,9 +1,9 @@
 # Gulp Require Timer
 
 I built my first non-trivial gulpfile following tutorials on the web and
-examples from the different libraries I included.  Worse, gulp was claiming
-super fast performance.  This library gave me visibility into the other
-tasks being done in my gulpfile that were slowing gulp down.
+examples from the different libraries I included.  It was crazy slow.  Worse, 
+gulp was claiming super fast performance.  This library gave me visibility 
+into what was happening in my gulpfile that was slowing gulp down.
 
 ## How to Use
 
