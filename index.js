@@ -1,20 +1,36 @@
+"use strict"
+const path = require('path')
 
+function getParentFolder() {
+  const fileName = module.parent.filename
+  return path.dirname(fileName)
+}
+  
 
-function requiret(library) {
+function requiret(libraryPath) {
   const startTime = Date.now()
-  const retval = require(library)
+
+
+  if(libraryPath.startsWith('.')) {
+    libraryPath = path.join(getParentFolder(), libraryPath)
+  }
+
+  const requiredLibrary = require(libraryPath)
+
   const totalTime = Date.now() - startTime
-  this.times[library]=totalTime
-  this.notifications && totalTime && console.log(`Loading ${library}: ${totalTime}ms`)
-  return retval
+  this.times[libraryPath] = totalTime
+
+  this.notifications && console.log(`Loading ${libraryPath}: ${totalTime}ms`)
+
+  return requiredLibrary
 }
 
-let retval = {
+let gulpRequireTimer = {
   times: {}, 
   notifications: true
 }
-retval.require = requiret.bind(retval)
+gulpRequireTimer.require = requiret.bind(gulpRequireTimer)
 
-module.exports = retval
+module.exports = gulpRequireTimer
 
 
